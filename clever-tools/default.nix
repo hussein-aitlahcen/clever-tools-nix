@@ -13,7 +13,7 @@ stdenv.mkDerivation rec {
 
   libPath = stdenv.lib.makeLibraryPath [stdenv.cc.cc glibc];
 
-  nodegitLibrary = stdenv.lib.makeLibraryPath [ nodegit ];
+  nodegitLibrary = stdenv.lib.makeLibraryPath [nodegit];
 
   installPhase = ''
     tar --extract --file=$src linux/clever --transform 's/linux\///'
