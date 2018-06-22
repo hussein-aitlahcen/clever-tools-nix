@@ -1,11 +1,11 @@
 { pkgs ? import <nixpkgs> {} }: with pkgs;
 let
-  mkOlderVersion = {rev, sha256}:
+  mkOlderVersion = { rev, sha256 }:
     let olderVersion = fetchFromGitHub {
           owner  = "hussein-aitlahcen"; # assume fretlink when merged, just for testing now
           repo   = "clever-tools-nix";
-          rev    = rev;
-          sha256 = sha256;
+          inherit rev;
+          inherit sha256;
         };
     in (import olderVersion {}).latest;
 in
