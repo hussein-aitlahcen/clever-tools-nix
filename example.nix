@@ -1,11 +1,9 @@
-{ pkgs ? import <nixpkgs> {} }:
-
+{ pkgs ? import <nixpkgs> {} }: with pkgs;
 let
-  clever-tools = pkgs.fetchFromGitHub
-                   { owner  = "fmenou";
-                     repo   = "clever-tools-nix";
-                     rev    = "7c2a7868b387ffd064dd14c51f7b18224cdc5c88";
-                     sha256 = "0r4bc4k90xpq325djvsyix9a6hiabmd4nba14j0plgdrwgzb36rh";
-                   };
-
-in import clever-tools { inherit pkgs; }
+  clever-tools = fetchFromGitHub {
+                   owner  = "hussein-aitlahcen"; # assume fretlink
+                   repo   = "clever-tools-nix";
+                   rev    = "9ebdf0e178cb40d1edae8689fa0aaab481edbd3e";
+                   sha256 = "0kyydkb4vm5jc0q5sv8y0bmi032prillm70cza8b8vk3c2pfpqcv";
+                 };
+in (import clever-tools {}).v0_9_3
