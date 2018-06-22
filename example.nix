@@ -3,7 +3,7 @@ let
   clever-tools = fetchFromGitHub {
                    owner  = "hussein-aitlahcen"; # assume fretlink
                    repo   = "clever-tools-nix";
-                   rev    = "9ebdf0e178cb40d1edae8689fa0aaab481edbd3e";
-                   sha256 = "0kyydkb4vm5jc0q5sv8y0bmi032prillm70cza8b8vk3c2pfpqcv";
+                   rev    = "f4b7fca8a69144b6415f11c9218730d12ad9a542";
+                   sha256 = "091k5srdl7f51c4xah2cvjq7wisml0bmzs8ychnk7g5hlc687s9m";
                  };
 in (import clever-tools {}).v0_9_3
